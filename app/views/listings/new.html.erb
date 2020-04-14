@@ -1,10 +1,16 @@
-<h1>Create your Listing</h1>
+<section class="hero is-white is-fullheight">
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-black">Create your Listing</h3>
+            <hr class="login-hr">
+            <p class="subtitle has-text-black"></p>
+            <div class="box">
 <%= form_for @listing do |l|%>
     <%= l.label :title %>
     <%= l.text_field :title %> <br>
-    <%# FINISH THE REST  %>
     <%= l.label :description %>
-    <%= l.text_field :description %> <br>
+    <%= l.text_area :description %> <br>
 
     <%= l.label :address %>
     <%= l.text_field :address %> <br>
@@ -15,14 +21,25 @@
     <%= l.label :price %>
     <%= l.text_field :price %> <br>
 
-    <%= l.label :ameneties %>
-    <%= l.text_field :ameneties %> <br>
+    <%= l.label :amenities %>
+    <%= l.text_field :amenities %> <br>
+ 
+   <%= l.fields_for :location do |f| %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %><br>
 
-    <%= l.label :host_id %>
-    <%= l.text_field :host_id %> <br>
+    <%=f.label :country%>
+    <%=f.text_field :country%> <br>
+    <%end%>
+       <%=l.label :image %><br>
 
-    <%= l.label :location_id %>
-    <%= l.text_field :location_id %> <br>
-        
+       <%=l.file_field :image%><br>
+
     <%= l.submit%>
 <% end %>
+</div>
+    </div>
+</div>
+</section>
+
+        

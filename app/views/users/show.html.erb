@@ -3,10 +3,13 @@
 <h2>L I S T I N G S</h2>
 <div>
 <% @user.listings.each do |post|%>
-    <%= link_to post.title, listing_path(post) %> <br>
-    <%= post.description %> <br>
-    $<%= post.price%>/night <br>
+    <%if post.image.attached?%>
+<%= image_tag url_for(post.image)%><br>
+<%=link_to "More information",listing_path(post)%><br>
+
 <% end %>
+<%end%>
+<%=link_to "Add your home", new_listing_path%><br>
 </div>
 
 <h2>P R E V I O U S  R E S E R V A T I O N S</h2>

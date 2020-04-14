@@ -4,4 +4,7 @@ class Listing < ApplicationRecord
     has_many :reservations
     has_many :reviews, through: :reservations
     has_many :guests, through: :reservations
+    has_one_attached:image
+    accepts_nested_attributes_for :location
+
 end
