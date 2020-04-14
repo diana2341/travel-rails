@@ -1,5 +1,9 @@
 <h1> Places Available!</h1>
 
-<%= @listings.each do |post|%>
-    <%= link_to post.title, listing_path(post)%> <br>    
-<% end %>
+<% @listings.each do |post|%>
+    <%if post.image.attached?%>
+    <%=  image_tag url_for(post.image)%><br>
+    <%=link_to "More information",listing_path(post)%>
+    <hr>
+    <%end%>
+    <% end %>

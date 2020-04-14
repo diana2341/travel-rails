@@ -4,7 +4,7 @@
         <div class="column is-4 is-offset-4">
             <h3 class="title has-text-black">Create your Listing</h3>
             <hr class="login-hr">
-            <p class="subtitle has-text-black">Please login to proceed.</p>
+            <p class="subtitle has-text-black"></p>
             <div class="box">
 <%= form_for @listing do |l|%>
     <%= l.label :title %>
@@ -23,8 +23,7 @@
 
     <%= l.label :amenities %>
     <%= l.text_field :amenities %> <br>
-    <%= l.label :host_id %><br>
-   <%= l.collection_select :host_id, User.all, :id, :first_name %> <br>
+ 
    <%= l.fields_for :location do |f| %>
     <%= f.label :city %><br>
     <%= f.text_field :city %><br>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "public#homepage"
+  root to: "listings#index"
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/signup', to: 'users#new', as: 'signup'
