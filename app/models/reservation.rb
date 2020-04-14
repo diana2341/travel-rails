@@ -10,9 +10,9 @@ class Reservation < ApplicationRecord
     private 
 
     def checkout_after_checkin
-        return if checkout.blank? || check_in.blank?
+        return if checkout.blank? || checkin.blank?
 
-        if checkout < check_in
+        if checkout < checkin
             errors.add(:checkout, "must be after the checkin date")
         end
     end
