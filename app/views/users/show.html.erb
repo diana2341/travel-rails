@@ -8,3 +8,9 @@
     <%= post.price%> <br>
 <% end %>
 <%=link_to "Add your home", new_listing_path%>
+
+<h2>Previous Reservations</h2>
+
+<% @user.reservations.each do |reservation|%>
+    <%= reservation.listing.title %>
+<% end %>

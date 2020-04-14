@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_04_14_142206) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -32,6 +33,9 @@ ActiveRecord::Schema.define(version: 2020_04_14_142206) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+=======
+ActiveRecord::Schema.define(version: 2020_04_14_153608) do
+>>>>>>> 92b366848abe27ebcba12bd764de147000a094fc
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
@@ -40,10 +44,10 @@ ActiveRecord::Schema.define(version: 2020_04_14_142206) do
     t.string "rental_type"
     t.integer "price"
     t.integer "host_id"
-    t.integer "neighborhood_id"
     t.string "amenities"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -71,20 +75,19 @@ ActiveRecord::Schema.define(version: 2020_04_14_142206) do
     t.integer "guest_id"
     t.integer "listing_id"
     t.integer "host_id"
-    t.integer "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer "city_id"
     t.integer "reservation_id"
     t.integer "listing_id"
     t.integer "guest_id"
     t.integer "host_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "location_id"
   end
 
   create_table "users", force: :cascade do |t|
