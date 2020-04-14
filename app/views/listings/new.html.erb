@@ -4,7 +4,7 @@
     <%= l.text_field :title %> <br>
     <%# FINISH THE REST  %>
     <%= l.label :description %>
-    <%= l.text_field :description %> <br>
+    <%= l.text_area :description %> <br>
 
     <%= l.label :address %>
     <%= l.text_field :address %> <br>
@@ -15,14 +15,16 @@
     <%= l.label :price %>
     <%= l.text_field :price %> <br>
 
-    <%= l.label :ameneties %>
-    <%= l.text_field :ameneties %> <br>
-
-    <%= l.label :host_id %>
-    <%= l.text_field :host_id %> <br>
-
-    <%= l.label :neighborhood_id %>
-    <%= l.text_field :neighborhood_id %> <br>
-        
+    <%= l.label :amenities %>
+    <%= l.text_field :amenities %> <br>
+    <%=l.label :image %><br>
+    <%=l.file_field :image%>
+    
     <%= l.submit%>
 <% end %>
+<!-- label :host_id -->
+   <!--text_field :host_id %> <br>-->
+<!--
+    <!-- <label :neighborhood_id %>-->
+    <!-- text_field :neighborhood_id %> <br>-->
+        

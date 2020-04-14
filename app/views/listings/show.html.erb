@@ -1,2 +1,14 @@
-<h1><%= @listing.title%> </h1>
+<h1><%= @listing.title%></h1> 
+<%if @listing.image.attached?%>
+<%=image_tag url_for(@listing.image)%><br>
+<%end%>
+<strong>Description</strong>
+<hr>
+<h2><%= @listing.description%></h2><br>
 
+<strong>Stay price per night: </strong><%=@listing.price%></h1> <br>
+<strong>Location:</strong> <%=  @listing.address%><br>
+<strong>Amenities:</strong> <%= @listing.amenities%><br>
+<strong>Rental type:</strong> <%= @listing.rental_type%><br>
+
+<hr>
