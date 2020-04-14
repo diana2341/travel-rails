@@ -5,7 +5,7 @@
 <% @user.listings.each do |post|%>
     <%= link_to post.title, listing_path(post) %> <br>
     <%= post.description %> <br>
-    <%= post.price%> <br>
+    $<%= post.price%>/night <br>
 <% end %>
 </div>
 
