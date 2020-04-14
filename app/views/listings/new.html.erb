@@ -1,8 +1,14 @@
-<h1>Create your Listing</h1>
+<section class="hero is-white is-fullheight">
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-black">Create your Listing</h3>
+            <hr class="login-hr">
+            <p class="subtitle has-text-black">Please login to proceed.</p>
+            <div class="box">
 <%= form_for @listing do |l|%>
     <%= l.label :title %>
     <%= l.text_field :title %> <br>
-    <%# FINISH THE REST  %>
     <%= l.label :description %>
     <%= l.text_area :description %> <br>
 
@@ -17,14 +23,24 @@
 
     <%= l.label :amenities %>
     <%= l.text_field :amenities %> <br>
-    <%=l.label :image %><br>
-    <%=l.file_field :image%>
-    
+    <%= l.label :host_id %><br>
+   <%= l.collection_select :host_id, User.all, :id, :first_name %> <br>
+   <%= l.fields_for :location do |f| %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %><br>
+
+    <%=f.label :country%>
+    <%=f.text_field :country%> <br>
+    <%end%>
+       <%=l.label :image %><br>
+
+       <%=l.file_field :image%><br>
+
     <%= l.submit%>
 <% end %>
-<!-- label :host_id -->
-   <!--text_field :host_id %> <br>-->
-<!--
-    <!-- <label :neighborhood_id %>-->
-    <!-- text_field :neighborhood_id %> <br>-->
+</div>
+    </div>
+</div>
+</section>
+
         

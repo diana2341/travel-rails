@@ -5,7 +5,7 @@
 <strong>Description</strong>
 <hr>
 <h2><%= @listing.description%></h2><br>
-
+<strong>Host: </strong> <%=link_to @listing.host.first_name,user_path(@listing.host_id) %><br>
 <strong>Stay price per night: </strong><%=@listing.price%></h1> <br>
 <strong>Location:</strong> <%=  @listing.address%><br>
 <strong>Amenities:</strong> <%= @listing.amenities%><br>

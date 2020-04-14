@@ -5,10 +5,13 @@ class ListingsController < ApplicationController
 
     def show
         @listing= Listing.find(params[:id])
+
     end 
 
     def new
         @listing = Listing.new
+         @listing.build_location
+
     end
 
     def create
@@ -19,7 +22,7 @@ class ListingsController < ApplicationController
         
          flash[:errors]= @listing.errors.full_messages
         if @listing.valid?
-            redirect_to listing_path(@listing.id)
+             redirect_to listing_path(@listing.host)
          else 
              redirect_to new_listing_path
          end 
@@ -38,6 +41,6 @@ class ListingsController < ApplicationController
 
     private 
     def listing_params
-        params.require(:listing).permit(:title, :description, :address, :rental_type, :price, :amenities,:image, :host_id)
+        params.require(:listing).permit(:title, :description, :address, :rental_type, :price, :amenities,:image, :host_id,location_attributes:[:country, :city])
     end
 end
