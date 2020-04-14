@@ -1,0 +1,21 @@
+<h1> Create your account </h1>
+
+<%= form_for @user do |u|%>
+    <%= u.label :first_name %>
+    <%= u.text_field :first_name %> <br>
+
+    <%= u.label :last_name %>
+    <%= u.text_field :last_name %> <br>
+
+    <%= u.label :age%>
+    <%= u.text_field :age %> <br>
+
+    <%= u.label :email %>
+    <%= u.text_field :email %> <br>
+
+    <%= u.label :password_digest %>
+    <%= u.text_field :password_digest %> <br>
+
+    <%= u.submit%> 
+
+<% end %>

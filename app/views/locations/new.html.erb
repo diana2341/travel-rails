@@ -1,0 +1,10 @@
+<h1>Create New Locations for available places in your town!</h1>
+<%= form_for @location do |l|%>
+    <%= l.label :city %>
+    <%= l.text_field :city %>
+
+    <%=l.label :country%>
+    <%=l.text_field :country%> <br>
+    
+    <%= l.submit%%>
+<% end %>

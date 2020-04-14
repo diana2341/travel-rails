@@ -1,0 +1,28 @@
+<h1>Create your Listing</h1>
+<%= form_for @listing do |l|%>
+    <%= l.label :title %>
+    <%= l.text_field :title %> <br>
+    <%# FINISH THE REST  %>
+    <%= l.label :description %>
+    <%= l.text_field :description %> <br>
+
+    <%= l.label :address %>
+    <%= l.text_field :address %> <br>
+
+    <%= l.label :rental_type %>
+    <%= l.text_field :rental_type %> <br>
+
+    <%= l.label :price %>
+    <%= l.text_field :price %> <br>
+
+    <%= l.label :ameneties %>
+    <%= l.text_field :ameneties %> <br>
+
+    <%= l.label :host_id %>
+    <%= l.text_field :host_id %> <br>
+
+    <%= l.label :neighborhood_id %>
+    <%= l.text_field :neighborhood_id %> <br>
+        
+    <%= l.submit%>
+<% end %>
