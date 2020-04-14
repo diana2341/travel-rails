@@ -7,3 +7,9 @@
     <%= post.description %> <br>
     <%= post.price%> <br>
 <% end %>
+
+<h2>Previous Reservations</h2>
+
+<% @user.reservations.each do |reservation|%>
+    <%= reservation.listing.title %>
+<% end %>
