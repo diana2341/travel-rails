@@ -1,2 +1,9 @@
 <h1><%= @listing.title%> </h1>
 
+Property Owner: <%= link_to @listing.host.first_name, user_path(@listing.host)%> <br>
+Reviews <br>
+<ul>
+<% @listing.reviews.all.each do |review|%>
+   <li> <%= link_to review.title, review_path(review)%></li>
+<% end %>
+</ul>
