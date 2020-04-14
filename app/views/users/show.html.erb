@@ -1,16 +1,21 @@
 <h1>Welcome to <%=@user.first_name%>'s page</h1>
 
-<h2>Listing</h2>
-
+<h2>L I S T I N G S</h2>
+<div>
 <% @user.listings.each do |post|%>
-    <%= post.title %> <br>
+    <%= link_to post.title, listing_path(post) %> <br>
     <%= post.description %> <br>
     <%= post.price%> <br>
 <% end %>
 <%=link_to "Add your home", new_listing_path%>
+</div>
 
-<h2>Previous Reservations</h2>
+<h2>P R E V I O U S  R E S E R V A T I O N S</h2>
 
 <% @user.reservations.each do |reservation|%>
     <%= reservation.listing.title %>
 <% end %>
+    <%= link_to reservation.listing.title, reservation_path(reservation) %> <br>
+<% end %>
+
+
