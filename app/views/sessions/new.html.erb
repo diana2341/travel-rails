@@ -1,6 +1,14 @@
 <p id=”alert”><%= alert %></p>
-<h1>Login</h1>
+<section class="hero is-white is-fullheight">
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-black">Login</h3>
+            <hr class="login-hr">
+            <p class="subtitle has-text-black">Welcome back!</p>
+            <div class="box">
 <%= form_tag sessions_path do |form| %>
+  
   <div class="field">
     <%= label_tag :email %>
     <%= text_field_tag :email %>
@@ -13,3 +21,9 @@
     <%= submit_tag "Login" %>
   </div>
 <% end %>
+          </form>
+          </div>
+              </div>
+          </div>
+          </section>
+

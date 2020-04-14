@@ -5,11 +5,95 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
 
   <body>
+  
+  <div class="block">
+  <nav class="navbar box is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+
+      <a class="navbar-item is-hidden-touch">
+      <img src="">      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable is-hidden-desktop">
+        <a class="navbar-link">
+          <img  src="./images/airbnb-logo.png" alt="airbnb logo"/>
+        </a>
+        <div class="navbar-dropdown is-visible">
+          <a href="https://www.airbnb.com/" class="dropdown-item">
+            Home
+          </a>
+          <hr class="dropdown-divider">
+          <a href="https://www.airbnb.com/work?s=flyout" class="dropdown-item">
+            Airbnb for Work
+          </a>
+          <hr class="dropdown-divider">
+          <a href="https://www.airbnb.com/host/homes?from_nav=1" class="dropdown-item">
+            Host a home<br/>
+            Earn up to <span class="has-text-weight-bold">€592 a month</span>
+          </a>
+          <a href="https://www.airbnb.com/host/experiences?from_nav=1" class="dropdown-item">
+            Host an experience
+          </a>
+          <a href="#" class="dropdown-item">
+            Sign Up
+          </a>
+          <a href="#" class="dropdown-item">
+            Log In
+          </a>
+          <hr class="dropdown-divider">
+          <a href="https://www.airbnb.com/help" class="dropdown-item">
+            Help
+          </a>
+        </div> <!-- /.navbar-dropdown -->
+      </div> <!-- /.navbar-item -->
+
+      <!-- SEARCHBAR -->
+      <div class="navbar-item is-block">
+        <a href="" class="button is-hidden-desktop">
+          <span class="icon">
+            <i class="fas fa-search"></i>
+          </span>
+          <span>Try "Montreal"</span>
+        </a>
+        <div class="field is-hidden-touch">
+          <p class="control has-icons-left">
+            <input class="input" type="text" placeholder='Try "Montreal"'>
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </p>
+        </div>
+      </div> <!-- /.navbar-item -->
+    </div> <!-- /.navbar-brand -->
+
+    <div class="navbar-end is-hidden-touch">
+     <a <button class="button is-white">
+          Become a host
+      </button></a>
+      <button class="button is-white" >
+          Help
+      </button>
+      <a href="/signup" class="button is-white">
+      <button class="button is-white">
+          Sign Up
+      </button></a>
+      
+      <a href="/login" class="button is-white">
+      <button  class="button is-white"> 
+          Log In
+      </button></a>
+    </div><!-- /.navbar-end -->
+
+  </nav>
+</div><!-- /.block -->
+  <section class="section">
+  
+  </section>
     <%= yield %>
+    
   </body>
 </html>
