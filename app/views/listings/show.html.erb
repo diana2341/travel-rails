@@ -1,5 +1,5 @@
 <h1 class="title"><%= @listing.title%></h1>
-
+<%= link_to 'reserve', new_listing_reservation_path(@listing) %>
 <strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%>
  <figure class="image is-3by2">
 

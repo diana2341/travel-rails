@@ -4,6 +4,7 @@ class ReservationsController < ApplicationController
     end
     def new
         @listing = Listing.find(params[:listing_id])
+        params[:listing_id] = @listing.id
         @reservation = @listing.reservations.new
         # @reservation = Reservation.new
         # @reservation.build_listing

@@ -5,12 +5,13 @@ class ListingsController < ApplicationController
 
     def show
         @listing= Listing.find(params[:id])
-
+        # params[:listing_id] = params[:id]
+        # byebug
     end 
 
     def new
         @listing = Listing.new
-         @listing.build_location
+        @listing.build_location
 
     end
 
