@@ -1,5 +1,6 @@
 <h1>Reservation form </h1>
-<%= form_for listing_reservations_path do |f|%>
+<%# listing_reservations_path %>
+<%= form_for @reservation do |f|%>
     <%=f.label :guest_amount%><br>
     <%=f.number_field :guest_amount %><br>
 
@@ -8,5 +9,8 @@
 
     <%=f.label :checkout%><br>
     <%=f.date_field  :checkout %><br>
+
+   <%= f.hidden_field :listing_id, :value => params[:listing_id]%>
+    <%# Hidden input%>
    <%=f.submit "Make Reservation"%>
     <%end%>
