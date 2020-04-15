@@ -1,3 +1,5 @@
+<h1 class="title"><%= @listing.title%></h1>
+
 <strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%>
  <figure class="image is-3by2">
 
@@ -5,24 +7,42 @@
 <img <%=image_tag url_for(@listing.image)%> > <br>
 <%end%>
 </figure>
-<h1 class="title"><%= @listing.title%></h1>     <h1 align="right"><strong>Stay price per night: </strong>$<%=@listing.price%></h1> 
+<strong>Location:</strong> <%=  @listing.location.country%>, <%=  @listing.location.city%>  <br>
 
-<strong>Location:</strong> <%=  @listing.address%> <br>
-<br>
-<br>
 <br>
 <br>
 
-
-
-
-<h1 class="title"><strong>Description</strong><h1>
-<hr>
+<section class="section">
+<div class="container">
+  <h1 class="title">Description</h1>
 <h2><%= @listing.description%></h2><br>
 <strong>Amenities:</strong> <%= @listing.amenities%><br>
 <strong>Rental type:</strong> <%= @listing.rental_type%><br>
+<h1><strong>Stay price per night: </strong>$<%=@listing.price%> </h1><br>
 
 
+𝖫𝗂𝗄𝖾 𝗐𝗁𝖺𝗍 𝗒𝗈𝗎 𝗌𝖾𝖾?<br>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  
+ <i class="icon-arrow-down"></i>
+  
+<br>
+<div class="field-body">
+  <div class="field">
+<div class="control">
+<a href="/reservations/new">
+<button class="button is-primary">
+
+Reserve
+</button>
+</a>
+</div>
+ </div>
+</div>
+
+</h2>
+</div>
+</section>
 <section class="section">
     <div class="container">
       <h1 class="title">Reviews</h1><br>
@@ -47,13 +67,7 @@
           <a class="button is-info">Submit</a>
         </div>
       </div>
-      <div class="level-right">
-        <div class="level-item">
-          <label class="checkbox">
-            <input type="checkbox"> Press enter to submit
-          </label>
-        </div>
-      </div>
+ 
     </nav>
   </div>
 </article>
