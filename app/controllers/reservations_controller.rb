@@ -3,13 +3,12 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
     end
     def new
-        # #  @listing = Listing.find(params[:listing_id])
         # @reservation = Reservation.new
-        @reservation = Reservation.new
-         @reservation.build_listing
+      @listing = Listing.find(params[:listing_id])
+      @reservation = @listing.reservations.new
 
 #         @listing = Listing.find(params[:listing_id])
-# @reservation = @listing.reservations.new
+#         @reservation = @listing.reservations.new
          
          
     end 
@@ -25,6 +24,7 @@ class ReservationsController < ApplicationController
         @reservation.save
         # redirect_to listing_reservation_path(@listing.id.reservations)
         redirect_to reservation_path(@reservation)
+        # "listings/1/reservations/1"
     end 
     def edit 
         @reservation=Reservation.find(params[:id])
