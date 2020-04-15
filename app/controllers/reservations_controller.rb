@@ -3,12 +3,17 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
     end
     def new
-        @reservation=Reservation.new
+        
+        @listing = Listing.find(params[:listing_id])
+        @reservation = Reservation.new
+        # @reservation.build_listing
     end 
     def create 
-      @reservation=Reservation.create(reservation_params)
-      @reservation.account_id = current_user.id
-     redirect_to confirmation_page_path(@reservation.id)
+        @listing = Listing.find(params[:listing_id])
+        # @reservation=Reservation.create(reservation_params)
+        @reservation = @listing.reservations.new(reservation_params)
+        @reservation.guest_id = current_user.id
+        redirect_to listing_reservation_path(@reservation)
     end 
     def edit 
         @reservation=Reservation.find(params[:id])
@@ -27,8 +32,9 @@ class ReservationsController < ApplicationController
         @user=User.find(params[:id])
         
     end
+
     private 
     def reservation_params
-    params.require(:reservation).permit(:guest_amount, :checkin,:checkout, :confirmation_number )
+    params.require(:reservation).permit(:guest_amount, :checkin,:checkout, :confirmation_number, :listing_id)
     end
 end
