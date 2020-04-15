@@ -1,5 +1,8 @@
-<section class="hero is-white is-fullheight">
-<div class="hero-body">
+
+<section class="hero is-success is-fullheight">
+<div class="hero is-fullheight is-primary has-background">
+  <img alt="Fill Murray" class="hero-background is-transparent" src="https://image.freepik.com/free-photo/city-view-from-seaport_1112-618.jpg" />
+  <div class="hero-body">
     <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
             <h3 class="title has-text-black">Create your Listing</h3>
@@ -7,28 +10,24 @@
             <p class="subtitle has-text-black"></p>
             <div class="box">
 <%= form_for @listing do |l|%>
-    <%= l.label :title %>
+    <%= l.label :title %><br>
     <%= l.text_field :title %> <br>
-    <%= l.label :description %>
+    <%= l.label :description %><br>
     <%= l.text_area :description %> <br>
-
-    <%= l.label :address %>
-    <%= l.text_field :address %> <br>
-
-    <%= l.label :rental_type %>
+    <%= l.label :rental_type %><br>
     <%= l.text_field :rental_type %> <br>
-
-    <%= l.label :price %>
+    <%= l.label :price %><br>
     <%= l.text_field :price %> <br>
-
-    <%= l.label :amenities %>
+    <%= l.label :address %><br>
+    <%= l.text_field :address %> <br><br>
+    <%= l.label :amenities %><br>
     <%= l.text_field :amenities %> <br>
  
    <%= l.fields_for :location do |f| %>
     <%= f.label :city %><br>
     <%= f.text_field :city %><br>
 
-    <%=f.label :country%>
+    <%=f.label :country%><br>
     <%=f.text_field :country%> <br>
     <%end%>
        <%=l.label :image %><br>
