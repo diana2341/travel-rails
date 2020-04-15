@@ -18,6 +18,7 @@ class ReservationsController < ApplicationController
         @reservation.save
         # redirect_to listing_reservation_path(@listing.id.reservations)
         redirect_to reservation_path(@reservation)
+        # "listings/1/reservations/1"
     end 
     def edit 
         @reservation=Reservation.find(params[:id])
