@@ -18,7 +18,6 @@ class ReservationsController < ApplicationController
         # byebug
         # @listing = Listing.find(params[:reservation][:listing_id])
         # @reservation=Reservation.create(reservation_params)
-        byebug
         res_hash=reservation_params
         res_hash[:listing_id]=current_user.id
         @reservation = Reservation.new(res_hash)
