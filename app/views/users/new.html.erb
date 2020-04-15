@@ -1,10 +1,10 @@
 
-<section class="hero is-success is-fullheight">
+<section class="hero is-primary is-fullheight">
 <div class="hero is-fullheight is-primary has-background">
   <img alt="Fill Murray" class="hero-background is-transparent" src="https://www.costaricastarvillas.com/wp-content/uploads/2015/04/Flamingo-2-1030x687.jpg" />
   <div class="hero-body">
     <div class="container">
-    
+    <br>
     <div class="hero-body">
     <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
@@ -20,24 +20,26 @@
 <% end %>
 
 <%= form_for @user do |u|%>
-    <%= u.label :first_name %>
+    <%= u.label :first_name %><br>
     <%= u.text_field :first_name %> <br>
 
-    <%= u.label :last_name %>
+    <%= u.label :last_name %><br>
     <%= u.text_field :last_name %> <br>
 
-    <%= u.label :age%>
+    <%= u.label :age%><br>
     <%= u.text_field :age %> <br>
 
-    <%= u.label :email %>
+    <%= u.label :email %><br>
     <%= u.text_field :email %> <br>
 
-    <%= u.label :password %>
+    <%= u.label :password %><br>
     <%= u.password_field :password %> <br>
 
     <%= u.submit%> 
 
 <% end %>
+Already have an account? <%=link_to "Log in", "/login"%>
+
 </div>
     </div>
 </div>

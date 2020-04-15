@@ -1,38 +1,92 @@
+<strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%>
  <figure class="image is-3by2">
 
 <%if @listing.image.attached?%>
 <img <%=image_tag url_for(@listing.image)%> > <br>
 <%end%>
 </figure>
-<h1 class="title"><%= @listing.title%></h1>
-<strong>Location:</strong> <%=  @listing.address%> <p align="right"><strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%></p> <br>
+<h1 class="title"><%= @listing.title%></h1>     <h1 align="right"><strong>Stay price per night: </strong>$<%=@listing.price%></h1> 
+
+<strong>Location:</strong> <%=  @listing.address%> <br>
+<br>
+<br>
+<br>
+<br>
 
 
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p>
 
-<strong>Description</strong>
+
+<h1 class="title"><strong>Description</strong><h1>
 <hr>
 <h2><%= @listing.description%></h2><br>
-<strong>Stay price per night: </strong><%=@listing.price%></h1> <br>
 <strong>Amenities:</strong> <%= @listing.amenities%><br>
 <strong>Rental type:</strong> <%= @listing.rental_type%><br>
-</p>
-</div>
-</footer>
+
 
 <section class="section">
     <div class="container">
-      <h1 class="title"></h1>
+      <h1 class="title">Reviews</h1><br>
       <h2 class="subtitle">
-Reviews <br>
+       <% if current_user %>
 <ul>
-<% @listing.reviews.all.each do |review|%>
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="https://immedilet-invest.com/wp-content/uploads/2016/01/user-placeholder.jpg">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="field">
+      <p class="control">
+        <textarea class="textarea" placeholder="Add a review..."></textarea>
+      </p>
+    </div>
+    <nav class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <a class="button is-info">Submit</a>
+        </div>
+      </div>
+      <div class="level-right">
+        <div class="level-item">
+          <label class="checkbox">
+            <input type="checkbox"> Press enter to submit
+          </label>
+        </div>
+      </div>
+    </nav>
+  </div>
+</article>
+<%else%>
+<%if @listing.reviews.all.any? %>
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+<% review= @listing.reviews.all.each do |review|%>
    <li> <%= link_to review.title, review_path(review)%></li>
 <% end %>
+<%else%>
+<hr>
+This listing has no reviews yet !
+<%end%>
 </ul>
+</p>
+</div>
+
+</nav>
+</div>
+</article>
+</div>
+
 </h2>
 </div>
 </section>
 </body>
+<%end%>

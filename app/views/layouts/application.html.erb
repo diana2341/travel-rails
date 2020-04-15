@@ -81,7 +81,9 @@
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
       <div class="dropdown-item">
+        <p><%=link_to "My reservations" ,reservations_path(current_user)%></p><br>
         <p><%=link_to "My listings" ,user_path(current_user)%></p><br>
+        <p><%=link_to "Make a listing" ,new_listing_path%></p><br>
         <p><%=link_to "Logout" , "/logout "%></p><br>
 
 
@@ -152,7 +154,8 @@
     </div> <!-- /.navbar-brand -->
 
     <div class="navbar-end is-hidden-touch">
-     <a <button class="button is-white">
+    <a href="/signup" class="button is-white">
+      <button class="button is-white">
           Become a host
       </button></a>
       <a href="/" class="button is-white">
