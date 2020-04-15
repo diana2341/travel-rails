@@ -1,16 +1,19 @@
-<section class="hero is-white is-fullheight">
+<section class="hero is-success is-fullheight">
+<div class="hero is-fullheight is-primary has-background">
+  <img alt="Fill Murray" class="hero-background is-transparent" src="http://cdn.home-designing.com/wp-content/uploads/2017/11/chinese-lanterns-minimalist-living-room.jpg" />
+  <div class="hero-body">
+    <div class="container">
+ 
+
 <div class="hero-body">
+
     <div class="container has-text-centered">
         <div class="column is-4 is-offset-4">
             <h3 class="title has-text-black">Login</h3>
             <hr class="login-hr">
             <p class="subtitle has-text-black">Welcome back!</p>
             <div class="box">
-<style>
-  p {
-    color: red;
-  }
-</style>
+
 
 <h2 class="red-text">
 <p id=”alert”><%= alert %></p>
@@ -26,12 +29,16 @@
     <%= password_field_tag :password %>
   </div>
   <div class="actions">
-    <%= submit_tag "Login" %>
-  </div>
+    <%= submit_tag "Login" %><br>
+  </div><br>
+  Don't have an account? <%=link_to "sign up", new_user_path%>
 <% end %>
+
           </form>
           </div>
               </div>
           </div>
           </section>
 
+          
+          

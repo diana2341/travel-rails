@@ -1,9 +1,38 @@
-<h1> Places Available!</h1>
+<big><strong> Places Available!</strong></big>
 
+    
+  <hr>
+   
+
+ 
+   
+
+<div class="columns is-multiline"><br>
 <% @listings.each do |post|%>
-    <%if post.image.attached?%>
+
+  <div class="column is-one-quarter-desktop is-half-tablet">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-3by2">
+            <%if post.image.attached?%>
     <%=  image_tag url_for(post.image)%><br>
-    <%=link_to "More information",listing_path(post)%>
-    <hr>
-    <%end%>
-    <% end %>
+            </figure>
+            <div class="card-content is-overlay is-clipped">
+              <span class="tag is-info">
+                $<%=post.price%> a night!
+              </span>       
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a class="card-footer-item"
+            <%=link_to "More information" ,listing_path(post)%><br>
+            
+
+            </a>
+        </footer>
+       
+    </div>
+  </div>
+ <%end%>
+    <% end %> 
+

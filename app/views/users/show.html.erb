@@ -1,20 +1,41 @@
-<h1>Welcome to <%=@user.first_name%>'s page</h1>
+<h1>Welcome to <%=@user.first_name%>'s page</h1><br>
 
-<h2>L I S T I N G S</h2>
-<div>
+<h2>L I S T I N G S</h2><br>
+<div class="columns is-multiline"><
+
 <% @user.listings.each do |post|%>
+    <div class="column is-one-quarter-desktop is-half-tablet"><br>
+    <div class="card">
+    <div class="card-image">
+        <figure class="image is-3by2">
     <%if post.image.attached?%>
 <%= image_tag url_for(post.image)%><br>
-<%=link_to "More information",listing_path(post)%><br>
+</figure>
+<div class="card-content is-overlay is-clipped">
+              <span class="tag is-info">
+              </span>       
+              </div>
+          </div>
+          <footer class="card-footer">
+          <a class="card-footer-item"
+          <%=link_to "More information" ,listing_path(post)%>
+          
+
+          </a>
+      </footer>
+     
+  </div>
+</div>
 
 <% end %>
+
 <%end%>
-<%=link_to "Add your home", new_listing_path%><br>
-</div>
+<%=link_to "Add listing", new_listing_path%><br>
 
 <h2>P R E V I O U S  R E S E R V A T I O N S</h2>
 
 <% @user.reservations.each do |reservation|%>
+
     <%= link_to reservation.listing.title, reservation_path(reservation) %> <br>
 <% end %>
 

@@ -1,20 +1,38 @@
-<h1><%= @listing.title%></h1> 
+ <figure class="image is-3by2">
+
 <%if @listing.image.attached?%>
-<%=image_tag url_for(@listing.image)%><br>
+<img <%=image_tag url_for(@listing.image)%> > <br>
 <%end%>
+</figure>
+<h1 class="title"><%= @listing.title%></h1>
+<strong>Location:</strong> <%=  @listing.address%> <p align="right"><strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%></p> <br>
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+
 <strong>Description</strong>
 <hr>
 <h2><%= @listing.description%></h2><br>
-<strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%> <br>
 <strong>Stay price per night: </strong><%=@listing.price%></h1> <br>
-<strong>Location:</strong> <%=  @listing.address%><br>
 <strong>Amenities:</strong> <%= @listing.amenities%><br>
 <strong>Rental type:</strong> <%= @listing.rental_type%><br>
+</p>
+</div>
+</footer>
 
-
+<section class="section">
+    <div class="container">
+      <h1 class="title"></h1>
+      <h2 class="subtitle">
 Reviews <br>
 <ul>
 <% @listing.reviews.all.each do |review|%>
    <li> <%= link_to review.title, review_path(review)%></li>
 <% end %>
 </ul>
+</h2>
+</div>
+</section>
+</body>
