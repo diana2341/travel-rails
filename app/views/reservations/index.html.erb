@@ -1,6 +1,10 @@
 <h2>P R E V I O U S  R E S E R V A T I O N S</h2>
 
-<% @user.reservation.each do |reservation|%>
-
-    <%= link_to reservation.listing.title, reservation_path(reservation) %> <br>
+<% @user.each do |user|
+    l=user.listings
+l.each do |listing|%>
+    <%listing.reservations.each do |reservation|%>
+        <%=reservation%>
+        <%end%>
+<%end%>
 <% end %>

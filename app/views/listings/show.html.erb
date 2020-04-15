@@ -19,7 +19,7 @@
 <strong>Rental type:</strong> <%= @listing.rental_type%><br>
 <h1><strong>Stay price per night: </strong>$<%=@listing.price%> </h1><br>
 
-
+<%=link_to 'reserve', new_listing_reservation_path(@listing.id)%>
 𝖫𝗂𝗄𝖾 𝗐𝗁𝖺𝗍 𝗒𝗈𝗎 𝗌𝖾𝖾?<br>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   
@@ -29,7 +29,7 @@
 <div class="field-body">
   <div class="field">
 <div class="control">
-<a href=" /listings/listing_id/reservations/new ">
+<a href=" /listings/listing.id/reservations/new ">
 <button class="button is-primary">
 
 Reserve
