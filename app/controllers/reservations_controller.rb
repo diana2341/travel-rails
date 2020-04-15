@@ -6,11 +6,8 @@ class ReservationsController < ApplicationController
         # @reservation = Reservation.new
       @listing = Listing.find(params[:listing_id])
       @reservation = @listing.reservations.new
-
 #         @listing = Listing.find(params[:listing_id])
 #         @reservation = @listing.reservations.new
-         
-         
     end 
 
     def create 
