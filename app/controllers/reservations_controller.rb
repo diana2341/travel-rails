@@ -3,18 +3,23 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
     end
     def new
-        @listing = Listing.find(params[:listing_id])
-        params[:listing_id] = @listing.id
-        @reservation = @listing.reservations.new
         # @reservation = Reservation.new
-        # @reservation.build_listing
+      @listing = Listing.find(params[:listing_id])
+      @reservation = @listing.reservations.new
+
+#         @listing = Listing.find(params[:listing_id])
+#         @reservation = @listing.reservations.new
+         
+         
     end 
 
     def create 
         # byebug
-        @listing = Listing.find(params[:reservation][:listing_id])
+        # @listing = Listing.find(params[:reservation][:listing_id])
         # @reservation=Reservation.create(reservation_params)
-        @reservation = @listing.reservations.new(reservation_params)
+        res_hash=reservation_params
+        res_hash[:listing_id]=current_user.id
+        @reservation = Reservation.new(res_hash)
         @reservation.guest_id = current_user.id
         @reservation.save
         # redirect_to listing_reservation_path(@listing.id.reservations)
