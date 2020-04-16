@@ -18,17 +18,20 @@ class ReservationsController < ApplicationController
 
     def create 
         # byebug
-        # @listing = Listing.find(params[:reservation][:listing_id])
-        # @reservation=Reservation.create(reservation_params)
-        res_hash=reservation_params
-        res_hash[:listing_id]=current_user.id
-        @reservation = Reservation.new(res_hash)
+        @listing = Listing.find(params[:reservation][:listing_id])
+        @reservation=Reservation.new(reservation_params)
+        @reservation.confirmation_number = rand(1000...5000)
         @reservation.guest_id = current_user.id
         @reservation.save
-        # redirect_to listing_reservation_path(@listing.id.reservations)
-        redirect_to reservation_path(@reservation)
-        # "listings/1/reservations/1"
+
+        flash[:messages]= @reservation.errors.full_messages
+        if @reservation.valid?
+            redirect_to reservation_path(@reservation)
+        else 
+            redirect_to new_listing_reservation_path(@listing)
+        end
     end 
+    
     def edit 
         @reservation=Reservation.find(params[:id])
     end 
