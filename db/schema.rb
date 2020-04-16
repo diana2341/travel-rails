@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_153608) do
+ActiveRecord::Schema.define(version: 2020_04_16_152540) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_153608) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "description"
-    t.integer "reservation_id"
     t.integer "guest_id"
     t.integer "listing_id"
     t.integer "host_id"
