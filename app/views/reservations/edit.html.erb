@@ -4,9 +4,11 @@
     <%=f.number_field :guest_amount %><br>
 
     <%=f.label :checkin%><br>
-    <%=f.date_field :checkin %><br>
+    <%=f.date_field  :checkin %><br>
 
-    <%=f.label :check_out%><br>
+    <%=f.label :checkout%><br>
     <%=f.date_field  :checkout %><br>
- <%=f.submit%>
+
+   <%# <%= f.hidden_field :listing_id, :value => @listing.id %>    
+   <%=f.submit "Update Reservation"%>
     <%end%>

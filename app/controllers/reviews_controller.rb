@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
         
         flash[:messages] = @review.errors.full_messages
         if @review.valid?
-            redirect_to review_path(@review)
+            redirect_to listing_path(@listing)
         else 
             redirect_to new_listing_review_path(@listing)
         end
