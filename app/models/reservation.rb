@@ -5,6 +5,7 @@ class Reservation < ApplicationRecord
     has_many :reviews
 
     validates :checkin, :checkout, presence: true
+    validates :checkin, :checkout, uniqueness: true
     validate :checkout_after_checkin
 
     private 
