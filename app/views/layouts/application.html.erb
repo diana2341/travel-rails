@@ -15,26 +15,21 @@
   <nav class="navbar box is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
 
-      <a class="navbar-item is-hidden-touch">
-      <img src="">      </a>
+      
 
       <div class="navbar-item has-dropdown is-hoverable is-hidden-desktop">
-        <a class="navbar-link">
-          <img  src="./images/airbnb-logo.png" alt="airbnb logo"/>
-        </a>
+   
         <div class="navbar-dropdown is-visible">
          
           <hr class="dropdown-divider">
          
           <hr class="dropdown-divider">
-          <a href="new_listing_path" class="dropdown-item">
-            Host a home<br/>
-          </a>
          
-          <a href="#" class="dropdown-item">
+         
+          <a href="/signup" class="dropdown-item">
             Sign Up
           </a>
-          <a href="#" class="dropdown-item">
+          <a href="login" class="dropdown-item">
             Log In
           </a>
           <hr class="dropdown-divider">
@@ -45,22 +40,7 @@
       </div> <!-- /.navbar-item -->
 
       <!-- SEARCHBAR -->
-      <div class="navbar-item is-block">
-        <a href="" class="button is-hidden-desktop">
-          <span class="icon">
-            <i class="fas fa-search"></i>
-          </span>
-          <span>Try "Montreal"</span>
-        </a>
-        <div class="field is-hidden-touch">
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder='Try "Montreal"'>
-            <span class="icon is-small is-left">
-              <i class="fas fa-search"></i>
-            </span>
-          </p>
-        </div>
-      </div> <!-- /.navbar-item -->
+  
     </div> <!-- /.navbar-brand -->
 
     <div class="navbar-end is-hidden-touch">
@@ -82,7 +62,7 @@
   <div class="dropdown-menu" id="dropdown-menu4" role="menu">
     <div class="dropdown-content">
       <div class="dropdown-item">
-        <p><%=link_to "My reservations" ,reservations_path(current_user)%></p><br>
+        <p><%=link_to "My reservations" ,reservations_path%></p><br>
         <p><%=link_to "My listings" ,user_path(current_user)%></p><br>
         <p><%=link_to "Make a listing" ,new_listing_path%></p><br>
         <p><%=link_to "Logout" , "/logout "%></p><br>
@@ -110,9 +90,7 @@
       <img src="">      </a>
 
       <div class="navbar-item has-dropdown is-hoverable is-hidden-desktop">
-        <a class="navbar-link">
-          <img  src="./images/airbnb-logo.png" alt="airbnb logo"/>
-        </a>
+        
         <div class="navbar-dropdown is-visible">
          
           <hr class="dropdown-divider">
@@ -122,10 +100,10 @@
             Host a home<br/>
           </a>
          
-          <a href="#" class="dropdown-item">
+          <a href="/signup" class="dropdown-item">
             Sign Up
           </a>
-          <a href="#" class="dropdown-item">
+          <a href="/login" class="dropdown-item">
             Log In
           </a>
           <hr class="dropdown-divider">
@@ -138,18 +116,9 @@
       <!-- SEARCHBAR -->
       <div class="navbar-item is-block">
         <a href="" class="button is-hidden-desktop">
-          <span class="icon">
-            <i class="fas fa-search"></i>
-          </span>
-          <span>Try "Montreal"</span>
+          
         </a>
         <div class="field is-hidden-touch">
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder='Try "Montreal"'>
-            <span class="icon is-small is-left">
-              <i class="fas fa-search"></i>
-            </span>
-          </p>
         </div>
       </div> <!-- /.navbar-item -->
     </div> <!-- /.navbar-brand -->

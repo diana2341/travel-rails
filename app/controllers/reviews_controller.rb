@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
     before_action :authorized
 
-    def show
-        @review = Review.find(params[:id])      
+    def index
+        @review = Review.all
     end
 
     def new
@@ -11,10 +11,10 @@ class ReviewsController < ApplicationController
     
     def create 
         @review=Review.create(review_params)
-        @review.user_id = current_user.id
-        user_id=User.find(params[:id])
+        @review.guest_id = current_user.id
+        user_id=User.find_by(id:params[:id])
 
-       redirect_to listing_path(@reservation.listing)
+       redirect_to reviews_path
     end 
     def edit 
         @review=reservation.find(params[:id])

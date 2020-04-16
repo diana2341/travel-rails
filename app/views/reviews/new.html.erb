@@ -1,4 +1,7 @@
-<h1>Review</h1>
+
+    <main class="container content box">
+
+	<h1 class="title">Your Feedback is Important</h1>
 <%=form_for @review do |f|%>
     <%=f.label :title%><br>
     <%=f.text_field :title%><br>
@@ -8,3 +11,7 @@
     <%=f.number_field :rating %><br>
     <%=f.submit%>
     <%end%>
+
+
+
+</main>

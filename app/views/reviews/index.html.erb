@@ -1,0 +1,8 @@
+
+ <h1> <% @review.each do |r|%></h1>
+   <%= r.title%> 
+
+<%= r.rating%> out of 5<br>
+<%= r.description%> <br>
+written by: <%= r.guest.first_name%>
+<%end%>
