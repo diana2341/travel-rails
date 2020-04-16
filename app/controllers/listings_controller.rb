@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-    before_action :authorized
+    # before_action :authorized
 
     def index
         @listings= Listing.all
@@ -47,7 +47,7 @@ class ListingsController < ApplicationController
     def destroy
         @listing=Listing.find(params[:id])
         @listing.destroy
-        
+        redirect_to user_path(@listing.host_id)
     end 
 
     private 
