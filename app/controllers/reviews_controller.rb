@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
     before_action :authorized
 
-    def show
-        @review = Review.find(params[:id])      
+    def index
+        @review = Review.all
     end
 
     def new
@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     end 
     
     def create 
+
         @listing = Listing.find(params[:review][:listing_id])
         # @host = User.find(params[:review][:host_id])
         @host = @listing.host

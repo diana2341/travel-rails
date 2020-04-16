@@ -1,3 +1,4 @@
+
 <h1>Review</h1>
 
 <% if flash[:messages]%>
@@ -15,6 +16,7 @@
 
     <%=f.label :rating %><br>
     <%=f.number_field :rating %><br>
+
 
     <%# <%= f.hidden_field :host_id, :value => @host.id%> 
     <%= f.hidden_field :listing_id, :value => @listing.id%>

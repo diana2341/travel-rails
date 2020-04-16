@@ -6,7 +6,7 @@ class ListingsController < ApplicationController
     end
 
     def show
-        @listing= Listing.find(params[:id])
+        @listing= Listing.find_by(id:params[:id])
         # params[:listing_id] = params[:id]
         # byebug
     end 

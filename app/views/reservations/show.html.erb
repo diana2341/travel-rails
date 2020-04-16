@@ -1,6 +1,37 @@
-Hello <%= @reservation.guest.first_name%>! <br>
+<section class="hero is-primary is-fullheight">
+<div class="hero is-fullheight is-primary has-background">
+  <img alt="Fill Murray" class="hero-background is-transparent" src="https://i.pinimg.com/originals/d6/3e/59/d63e59c23830a01a891abaf86de9aa3e.gif" />
+  <div class="hero-body">
+    <div class="container">
+ 
+ 
+
+      <h1 class="title"> Hello <%= @reservation.guest.first_name%>!</h1>
+      
+      Hello <%= @reservation.guest.first_name%>! <br>
 You will be staying at <%= @reservation.listing.address %> from <%=@reservation.checkin %>to<%=@reservation.checkout%> <br>
 
-Your confirmation number is <%= @reservation.confirmation_number%> <br>
+Your confirmation number is <%= @reservation.confirmation_number%> <br> 
+
+
+<div class="column is-one-quarter-desktop is-half-tablet"><br>
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-3by2">
+    <%if @reservation.listing.image.attached?%>
+    <img <%=image_tag url_for(@reservation.listing.image)%> > <br>
+    </figure>
+    <div class="card-content is-overlay is-clipped">
+                  <span class="tag is-info">
+                  </span>       
+                  </div>
+              </div>
+           
+         
+      </div>
+    </div>
+    
+
+
 
 <%= link_to "Edit Reservation", edit_reservation_path(@reservation)%>
