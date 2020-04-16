@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:new, :create]
+
     def show 
         # if current_user
           @user = User.find_by(id:params[:id])

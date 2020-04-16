@@ -4,7 +4,37 @@
     l=user.listings
 l.each do |listing|%>
     <%listing.reservations.each do |reservation|%>
-        <%=reservation%>
+        <div class="column is-one-quarter-desktop is-half-tablet"><br>
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-3by2">
+        <%if reservation.listing.image.attached?%>
+    <%= image_tag url_for(reservation.listing.image)%><br>
+    </figure>
+    <div class="card-content is-overlay is-clipped">
+                  <span class="tag is-info">
+                  </span>       
+                  </div>
+              </div>
+              <footer class="card-footer">
+              <a class="card-footer-item"
+              <%=link_to "More information" ,listing_path(listing)%>
+              
+    
+              </a>
+          </footer>
+         
+      </div>
+    </div>
+    
+    <% end %>
+    
+    <%end%>
+    <container>
+    </container>
+    
+    
+    
         <%end%>
+
 <%end%>
-<% end %>

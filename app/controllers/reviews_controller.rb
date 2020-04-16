@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    before_action :authorized
+
     def show
         @review = Review.find(params[:id])      
     end
