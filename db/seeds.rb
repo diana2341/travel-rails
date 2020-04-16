@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 # User.destroy_all
 # Location.destroy_all
 # Listing.destroy_all
@@ -34,4 +35,4 @@
 
 # 10.times do
 #     Trip.create!(location_id: Location.all.sample.id, listing_id: Listing.all.sample.id, guest_id: User.all.sample.id, host_id: User.all.sample.id, reservation_id: Reservation.all.sample.id)
-# end
+end

@@ -4,7 +4,8 @@
     l=user.listings
 l.each do |listing|%>
     <%listing.reservations.each do |reservation|%>
-        <%=reservation%>
+        <%=reservation.confirmation_number%> 
         <%end%>
 <%end%>
 <% end %>
+
