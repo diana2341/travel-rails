@@ -14,5 +14,7 @@
     <%=f.label :checkout%><br>
     <%=f.date_field  :checkout %><br>
 
-   <%= f.hidden_field :listing_id, :value => @listing.id %>   <%=f.submit "Make Reservation"%>
+   <%= f.hidden_field :listing_id, :value => @listing.id %>   
+   <%=f.submit "Make Reservation"%>
     <%end%>
+ 

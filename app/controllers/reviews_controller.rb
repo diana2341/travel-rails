@@ -6,16 +6,29 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        @review=Review.new
+        @listing = Listing.find(params[:listing_id])
+        @review = Review.new
+        @host = @listing.host
     end 
     
     def create 
-        @review=Review.create(review_params)
-        @review.guest_id = current_user.id
-        user_id=User.find_by(id:params[:id])
 
-       redirect_to reviews_path
+        @listing = Listing.find(params[:review][:listing_id])
+        # @host = User.find(params[:review][:host_id])
+        @host = @listing.host
+        @review=Review.new(review_params)
+        @review.host_id = @host.id
+        @review.guest_id = current_user.id
+        @review.save
+        
+        flash[:messages] = @review.errors.full_messages
+        if @review.valid?
+            redirect_to listing_path(@listing)
+        else 
+            redirect_to new_listing_review_path(@listing)
+        end
     end 
+
     def edit 
         @review=reservation.find(params[:id])
         @review.update(review_params)
@@ -33,6 +46,6 @@ class ReviewsController < ApplicationController
     end 
     private 
     def review_params
-    params.require(:review).permit(:title,:rating,:description)
+    params.require(:review).permit(:title,:rating,:description,:listing_id)
    end
 end

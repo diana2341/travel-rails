@@ -13,13 +13,10 @@ class ReservationsController < ApplicationController
 
     end
     def new
-        # @reservation = Reservation.new
       @listing = Listing.find(params[:listing_id])
       @reservation = @listing.reservations.new
-#         @listing = Listing.find(params[:listing_id])
-#         @reservation = @listing.reservations.new
     end 
-
+    
     def create 
         # byebug
         @listing = Listing.find(params[:reservation][:listing_id])
@@ -27,7 +24,7 @@ class ReservationsController < ApplicationController
         @reservation.confirmation_number = rand(1000...5000)
         @reservation.guest_id = current_user.id
         @reservation.save
-
+        
         flash[:messages]= @reservation.errors.full_messages
         if @reservation.valid?
             redirect_to reservation_path(@reservation)
@@ -37,13 +34,16 @@ class ReservationsController < ApplicationController
     end 
     
     def edit 
+        # @listing = Listing.find(params[:listing_id])
         @reservation=Reservation.find(params[:id])
     end 
     def update 
+        # @listing = Listing.find(params[:listing_id])
         @reservation=Reservation.find(params[:id])
+        @reservation.confirmation_number = rand(1000...5000)
+        @reservation.guest_id = current_user.id
         @reservation.update(reservation_params)
-        @reservation.account_id = current_user.id
-        redirect_to confirmation_page_path(@reservation.id)
+        redirect_to reservation_path(@reservation)
     end 
     def destroy
         @reservation=Reservation.find(params[:id])
