@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+     before_action :authorized
+
     def index 
         @user=User.all 
         @reservations=Reservation.all
@@ -42,6 +44,7 @@ class ReservationsController < ApplicationController
     def destroy
         @reservation=Reservation.find(params[:id])
         @reservation.destroy
+        
     end 
     def confirmation_page
         @user=User.find(params[:id])

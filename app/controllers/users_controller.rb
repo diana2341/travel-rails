@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+    before_action :authorized
+    skip_before_action :authorized, only: [:new, :create]
+
     def show 
         # if current_user
           @user = User.find_by(id:params[:id])
@@ -32,6 +35,12 @@ class UsersController < ApplicationController
         @user.update(user_params)
         redirect_to user_path(@user)
     end
+    def destroy
+        @user = User.find(params[:id])
+       @listing = @user.listings.each do |l|
+         l.destroy
+        end
+     end
 
     private
     def user_params
