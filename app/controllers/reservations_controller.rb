@@ -39,7 +39,14 @@ class ReservationsController < ApplicationController
         @reservation.confirmation_number = rand(1000...5000)
         @reservation.guest_id = current_user.id
         @reservation.update(reservation_params)
-        redirect_to reservation_path(@reservation)
+        
+        # redirect_to reservation_path(@reservation)
+        flash[:messages]= @reservation.errors.full_messages
+        if @reservation.valid?
+            redirect_to reservation_path(@reservation)
+        else 
+            redirect_to edit_reservation_path(@reservation)
+        end
     end 
     def destroy
         @reservation=Reservation.find(params[:id])
