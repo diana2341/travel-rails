@@ -3,3 +3,4 @@ You will be staying at <%= @reservation.listing.address %> from <%=@reservation.
 
 Your confirmation number is <%= @reservation.confirmation_number%> <br>
 
+<%= link_to "Edit Reservation", edit_reservation_path(@reservation)%>

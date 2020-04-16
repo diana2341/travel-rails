@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
 
     belongs_to :listing
     belongs_to :guest, :class_name => "User"
-lear
+    
     validates :checkin, :checkout, presence: true
     validates :checkin, :checkout, uniqueness: true
     validate :checkout_after_checkin
