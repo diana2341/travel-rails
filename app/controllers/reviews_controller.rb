@@ -2,10 +2,11 @@ class ReviewsController < ApplicationController
     before_action :authorized
 
     def index
-        @review = Review.all
     end
 
     def new
+        @reviews = Review.all
+
         @listing = Listing.find(params[:listing_id])
         @review = Review.new
         @host = @listing.host
