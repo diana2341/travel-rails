@@ -1,5 +1,4 @@
 <h1 class="title"><%= @listing.title%></h1>
-<%=link_to "write review", new_review_path%>
 
 
 <strong>Property Owner: </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%><br>
@@ -79,52 +78,38 @@ Reserve
 <%end%>
 
 <section class="section">
-    <div class="container">
+    <div class="comment">
        <% if current_user %>
-       <div class="container is-fluid">
+
+       <h1 class="title">Recent reviews</h1>
+
+         <div class="column">
+
+  <% @listing.reviews.each do |review|%><br>
+
+    <div class="box">
+      <p class="title is-5"><%= review.title%></p>
+  
+    <p class="subtitle"><%=review.description%></p><br>
+
+  </div>
+</div>
 
 
-<main class="container content box">
-
-	<h1 class="title">Your Feedback is Important</h1>
-	
-	<form method="post" action="/2/reviews">
-		<div class="field">
-			<label class="label" for="the_name">Title</label>
-			<input type="text" name="name" id="the_name" class="input">
-		</div>
-
-		
-	<div class="field">
-			<label class="label" for="the_name">rating</label>
-			<input type="text" name="name" id="the_name" class="input">
-		</div>
-		<div class="field">
-			<label class="label" for="the_message">Review</label>
-			<textarea name="message" id="the_message" class="textarea"></textarea>
-		</div>
-
-		<div class="field">
-			<input type="submit" class="button is-primary">
-		</div>
-	</form>
-
-</main>
-    </div>
-<%else%>
-<%if @listing.reviews.all.any? %>
-<ul>
-<% review= @listings.reviews.each do |review|%>
-   <li> <%= link_to review.title, review_path(review)%></li>
 <% end %>
+
+</div>
+    </div>
+ <%= link_to "write review",new_listing_review_path(@listing) %>
+
 <%else%>
 <hr>
-This listing has no reviews yet !
-<%end%>
-</ul>
-
-</h2>
+< div class="control">
+  <textarea class="textarea" readonly>This listing has no reviews yet !</textarea>
+</div>
 </div>
 </section>
 </body>
 <%end%>
+
+

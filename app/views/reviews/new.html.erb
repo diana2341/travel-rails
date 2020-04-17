@@ -1,5 +1,6 @@
 
-<h1>Review</h1>
+    <main class="review content box">
+	<h1 class="title">Your Feedback is Important</h1>
 
 <% if flash[:messages]%>
     <% flash[:messages].each do |m|%>
@@ -24,3 +25,7 @@
 
     <%=f.submit "Submit Review"%>
     <%end%>
+
+	</form>
+
+</main>
