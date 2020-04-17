@@ -10,7 +10,7 @@
 <b><strong>Hosted by </strong><%= link_to @listing.host.first_name, user_path(@listing.host)%></strong></b><br>
 
 </figure>
- <%= yield %>
+ 
     </div>
 
 <br>
@@ -20,14 +20,15 @@
  
 <section class="section">
 <div class="container">
-  <h1 class="title">Description</h1>
-<strong>Location:</strong> <%=  @listing.location.country%>, <%=  @listing.location.city%>  <br>
-<h2><%= @listing.description%></h2><br>
+  <div class='text_contain'>
+  <h1 class="title ">Description</h1>
+<h2 ><%= @listing.description%></h2><br>
 <strong>Amenities:</strong> <%= @listing.amenities%><br>
 <strong>Rental type:</strong> <%= @listing.rental_type%><br>
 <h1><strong>Stay price per night: </strong>$<%=@listing.price%> </h1><br>
+<strong>Location:</strong> <%=  @listing.location.country%>, <%=  @listing.location.city%>  <br>
 
-   <%= yield %>
+    </div>
     </div>
 <%if @listing.host != current_user%>
 
@@ -100,6 +101,7 @@
 
 
 <% end %>
+<%if @listing.host != current_user%>
 <div class="control">
 <a href="<%=new_listing_review_path(@listing)%>">
 <button class="button is-primary">
@@ -107,7 +109,7 @@ Write a review
 </button>
 </div>
     </div>
-
+<%end%>
 <%else%>
 <hr>
 <div class="control">
