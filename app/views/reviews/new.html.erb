@@ -1,7 +1,14 @@
 
-    <main class="review content box">
-	<h1 class="title">Your Feedback is Important</h1>
-
+ 
+<section class="hero is-success is-fullheight">
+<div class="hero is-fullheight is-primary has-background">
+  <img alt="Fill Murray" class="hero-background is-transparent" src="https://i.gifer.com/5L5q.gif" />
+  <div class="hero-body">
+   <main class="review content box">
+    
+	<font size="6">Your Feedback is Important</font>
+<br>
+<br>
 <% if flash[:messages]%>
     <% flash[:messages].each do |m|%>
         <%= m %> <br>
@@ -13,10 +20,10 @@
     <%=f.text_field :title%><br>
 
     <%=f.label :description%><br>
-    <%=f.text_area :description%><br>
+  <%=f.text_area :description%><br>
 
-    <%=f.label :rating %><br>
-    <%=f.number_field :rating %><br>
+ <%=f.label :rating %><br>
+<%=f.number_field :rating %><br>
 
 
     <%# <%= f.hidden_field :host_id, :value => @host.id%> 

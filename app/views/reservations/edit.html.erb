@@ -1,4 +1,7 @@
-<h1>Reservation edit form </h1>
+
+
+    <main class="review content box">
+    <h1 class="title">Edit your reservation!</h1>
 <%= form_for @reservation do |f|%>
     <%=f.label :guest_amount%><br>
     <%=f.number_field :guest_amount %><br>
@@ -12,3 +15,7 @@
    <%# <%= f.hidden_field :listing_id, :value => @listing.id %>    
    <%=f.submit "Update Reservation"%>
     <%end%>
+    </form>
+
+</main>
+    
