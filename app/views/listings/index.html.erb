@@ -57,8 +57,9 @@
     <%=  image_tag url_for(post.image)%><br>
             </figure>
             <div class="card-content is-overlay is-clipped">
+              
               <span class="tag is-info">
-                $<%=post.price%> a night!
+                <%=post.location.city%> <br>
               </span>       
             </div>
         </div>

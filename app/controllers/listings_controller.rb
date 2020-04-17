@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
 
     def show
         @review=Review.new
-
+        @reservation=Reservation.new
         @listing= Listing.find_by(id:params[:id])
         # params[:listing_id] = params[:id]
         # byebug

@@ -1,16 +1,13 @@
 
-
-    <main class="review content box">
-    <h1 class="title">Edit your reservation!</h1>
-
-<h1>Reservation edit form </h1>
-<% if flash[:messages]%>
+   
+   
+   <main class="review content box">
+    <h1 class="title">Make your reservation!</h1>
+    <% if flash[:messages]%>
     <%flash[:messages].each do |m|%>
     <%= m%> <br>
     <% end %>
 <% end %>
-
-
 <%= form_for @reservation do |f|%>
     <%=f.label :guest_amount%><br>
     <%=f.number_field :guest_amount %><br>
@@ -21,10 +18,11 @@
     <%=f.label :checkout%><br>
     <%=f.date_field  :checkout %><br>
 
-   <%# <%= f.hidden_field :listing_id, :value => @listing.id %>    
-   <%=f.submit "Update Reservation"%>
+   <%= f.hidden_field :listing_id, :value => @listing.id %>   
+   <%=f.submit "Make Reservation"%>
     <%end%>
-    </form>
+ 
+</form>
 
 </main>
     
