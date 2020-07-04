@@ -1,24 +1,15 @@
-# README
+# Travel rails 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A site for hosting homes as stays for people on vacation and where homes, apartments, or rooms can be booked by people traveling. Users can become hosts and post their homes or find a home.
 
-Things you may want to cover:
 
-* Ruby version
+Utilized active storage, to allow a user to showcase their homes that they are listing.
 
-* System dependencies
+Utilized Bulma and pure css to  build UI.
 
-* Configuration
+Built application using Ruby on Rails
 
-* Database creation
 
-* Database initialization
+To Visit App:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`localhost:3000/` 
